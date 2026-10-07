@@ -1,0 +1,17 @@
+{
+  "key": "rsv-a",
+  "organism": "RSV-A",
+  "accession": "NC_001803.1",
+  "tree_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_respiratory_syncytial_virus_A/optimized.pb.gz",
+  "metadata_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_respiratory_syncytial_virus_A/metadata.tsv.gz",
+  "reference_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_respiratory_syncytial_virus_A/treetime_rerooted_NC_001803.1.fa",
+  "downloaded_at": "2026-10-07T23:55:00+00:00",
+  "prune_size": 10000,
+  "source_leaf_count": 14005,
+  "leaf_count": 10000,
+  "examples": [
+    "MH760619.1",
+    "KJ939956.1",
+    "OK649598.1"
+  ]
+}
