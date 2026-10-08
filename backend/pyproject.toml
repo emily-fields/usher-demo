@@ -6,6 +6,8 @@ dependencies = [
     "chronumental==0.0.65",
     "fastapi==0.142.4",
     "httpx==0.28.1",
+    "jax==0.4.38",
+    "jaxlib==0.4.38",
     "python-multipart==0.0.32",
     "taxoniumtools==2.1.24",
     "uvicorn[standard]==0.54.0",
