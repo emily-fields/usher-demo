@@ -79,6 +79,17 @@ export const api = {
 };
 
 const FINISHED: JobStatus[] = ['done', 'failed'];
+const POLL_MS = 2000;
+
+const isMissing = (error: unknown) => error instanceof ApiError && error.status === 404;
+
+export const shouldRetry = (failureCount: number, error: unknown) => !isMissing(error) && failureCount < 3;
+
+// Keep polling through transient errors; stop once the job is finished or known not to exist.
+export function jobRefetchInterval(status: JobStatus | undefined, error: unknown): number | false {
+  if (isMissing(error) || (status && FINISHED.includes(status))) return false;
+  return POLL_MS;
+}
 
 export const useOrganisms = () => useQuery({ queryKey: ['organisms'], queryFn: api.getOrganisms });
 
@@ -86,7 +97,8 @@ export const useJob = (id: string) =>
   useQuery({
     queryKey: ['job', id],
     queryFn: () => api.getJob(id),
-    refetchInterval: (query) => (query.state.data && FINISHED.includes(query.state.data.status) ? false : 2000),
+    retry: shouldRetry,
+    refetchInterval: (query) => jobRefetchInterval(query.state.data?.status, query.state.error),
   });
 
 export const useCreateJob = () =>

@@ -65,3 +65,17 @@ def test_rejects_bad_metadata(data, message):
     with pytest.raises(ValidationError) as exc:
         parse_metadata("m.tsv", data, {"s1"})
     assert any(message in e for e in exc.value.errors), exc.value.errors
+
+
+@pytest.mark.parametrize("header", [b'sample,"Location, city"\ns1,LA\n', b'sample,"a\tb"\ns1,LA\n'])
+def test_rejects_metadata_column_names_that_break_taxonium(header):
+    with pytest.raises(ValidationError) as exc:
+        parse_metadata("m.csv", header, {"s1"})
+    assert any("column names cannot contain" in e for e in exc.value.errors), exc.value.errors
+
+
+@pytest.mark.parametrize("data", [b">NC_001803.1 soar_id=Y\nACGT\n", b">soar_id=Y\nACGT\n"])
+def test_single_soar_style_header_explains_expected_format(data):
+    with pytest.raises(ValidationError) as exc:
+        parse_fasta("in.fasta", data, SUPPORTED)
+    assert any(">ACCESSION sample_name" in e for e in exc.value.errors), exc.value.errors

@@ -80,7 +80,7 @@ def parse_fasta(filename: str, data: bytes, supported_accessions: Collection[str
         name = tokens[1] if len(tokens) > 1 else f"sample_{index}"
         label = f"Record {index} ({name})"
         if not NAME_RE.match(name):
-            errors.append(f"{label}: sample names may only contain letters, digits and . _ - / |")
+            errors.append(f"{label}: sample names may only contain letters, digits and . _ - / |. {HEADER_HINT}.")
         if name in seen:
             errors.append(f"{label}: duplicate sample name.")
         seen.add(name)
@@ -98,7 +98,7 @@ def parse_fasta(filename: str, data: bytes, supported_accessions: Collection[str
             f"{HEADER_HINT}, using one of: {supported}."
         )
     elif accessions and next(iter(accessions)) not in supported_accessions:
-        errors.append(f"Reference accession {next(iter(accessions))} is not supported. Use one of: {supported}.")
+        errors.append(f"Reference accession {next(iter(accessions))} is not supported. {HEADER_HINT}, using one of: {supported}.")
     if errors:
         raise ValidationError(errors)
     return ParsedFasta(next(iter(accessions)), records)

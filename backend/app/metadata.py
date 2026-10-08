@@ -45,6 +45,8 @@ def parse_metadata(filename: str, data: bytes, sample_names: set[str]) -> Upload
         errors.append("Metadata has duplicate column names.")
     if PLACED_COLUMN in columns:
         errors.append(f"'{PLACED_COLUMN}' is a reserved column name.")
+    if any(c in h for h in columns for c in ",\t\n\r"):
+        errors.append("Metadata column names cannot contain commas, tabs or line breaks.")
 
     rows: dict[str, dict[str, str]] = {}
     for line_no, row in enumerate(table[1:], start=2):

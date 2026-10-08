@@ -13,7 +13,8 @@ export default function JobPage() {
   const job = useJob(id);
 
   if (job.isPending) return <LoaderCircle className="mx-auto size-8 animate-spin" />;
-  if (job.isError || !job.data) {
+  // A failed poll keeps the last good data, so only show "not found" when there is none.
+  if (!job.data) {
     return (
       <Alert variant="destructive" className="mx-auto max-w-xl">
         <AlertCircle className="size-4" />
