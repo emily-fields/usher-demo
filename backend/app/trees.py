@@ -36,7 +36,7 @@ TREE_SPECS: tuple[TreeSpec, ...] = (
         key="sars-cov-2",
         organism="SARS-CoV-2",
         accession="NC_045512.2",
-        tree_url=f"{UCSC_BASE}/public-latest.all.masked.pb.gz",
+        tree_url=f"{UCSC_BASE}/public-latest.all.masked.ShUShER.pb.gz",
         metadata_url=f"{UCSC_BASE}/public-latest.metadata.tsv.gz",
         reference_url=f"{NCBI_EFETCH}?db=nuccore&id=NC_045512.2&rettype=fasta&retmode=text",
         example_accession_column="genbank_accession",
