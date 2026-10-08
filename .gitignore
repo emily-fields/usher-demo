@@ -1,0 +1,13 @@
+data/
+trees/.tmp/
+node_modules/
+frontend/dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.DS_Store
+.playwright-mcp/
+docs/superpowers/
+.superpowers/

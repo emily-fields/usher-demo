@@ -1,0 +1,27 @@
+[project]
+name = "usher-demo-backend"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "chronumental==0.0.65",
+    "fastapi==0.142.4",
+    "httpx==0.28.1",
+    "jax==0.4.38",
+    "jaxlib==0.4.38",
+    "python-multipart==0.0.32",
+    "taxoniumtools==2.1.24",
+    "uvicorn[standard]==0.54.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not integration'"
+markers = ["integration: runs real tools (needs Docker or the soar-usher image)"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+]

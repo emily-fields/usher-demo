@@ -1,0 +1,17 @@
+{
+  "key": "flu-h3n2-ha",
+  "organism": "Influenza A H3N2 (HA)",
+  "accession": "NC_007366.1",
+  "tree_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Influenza_A_virus_A_New_York_392_2004_H3N2_4/optimized.pb.gz",
+  "metadata_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Influenza_A_virus_A_New_York_392_2004_H3N2_4/metadata.tsv.gz",
+  "reference_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Influenza_A_virus_A_New_York_392_2004_H3N2_4/treetime_rerooted_NC_007366.1.fa",
+  "downloaded_at": "2026-10-07T23:55:09+00:00",
+  "prune_size": 10000,
+  "source_leaf_count": 88199,
+  "leaf_count": 10000,
+  "examples": [
+    "KP458976.1",
+    "KP458135.1",
+    "KT827976.1"
+  ]
+}

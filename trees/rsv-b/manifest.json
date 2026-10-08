@@ -1,0 +1,17 @@
+{
+  "key": "rsv-b",
+  "organism": "RSV-B",
+  "accession": "NC_001781.1",
+  "tree_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_orthopneumovirus_B1/optimized.pb.gz",
+  "metadata_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_orthopneumovirus_B1/metadata.tsv.gz",
+  "reference_url": "https://raw.githubusercontent.com/AngieHinrichs/viral_usher_trees/main/trees/Human_orthopneumovirus_B1/treetime_rerooted_NC_001781.1.fa",
+  "downloaded_at": "2026-10-07T23:55:04+00:00",
+  "prune_size": 10000,
+  "source_leaf_count": 12056,
+  "leaf_count": 10000,
+  "examples": [
+    "OZ331578.1",
+    "OR496378.1",
+    "OZ279344.1"
+  ]
+}
