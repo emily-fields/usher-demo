@@ -33,3 +33,8 @@ def test_run_tool_raises_with_last_stderr_line_and_writes_log(settings, tmp_path
 
 def test_run_tool_returns_stdout(settings, tmp_path):
     assert run_tool(["sh", "-c", "echo hi"], workdir=tmp_path, settings=settings, timeout=10).strip() == "hi"
+
+
+def test_run_tool_reports_out_of_memory_kills(settings, tmp_path):
+    with pytest.raises(ToolError, match="ran out of memory"):
+        run_tool(["sh", "-c", "echo progress >&2; exit 137"], workdir=tmp_path, settings=settings, timeout=10)

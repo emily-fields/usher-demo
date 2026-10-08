@@ -62,6 +62,8 @@ def run_tool(
     except FileNotFoundError as e:
         raise ToolError(args[0], "command not found (set DOCKER_WRAP=true or run inside the Docker image)") from e
     _write_log(log_path, full, proc.stdout, proc.stderr)
+    if proc.returncode == 137:
+        raise ToolError(args[0], "ran out of memory (killed); give Docker more memory")
     if proc.returncode != 0:
         raise ToolError(args[0], _last_line(proc.stderr) or f"exit code {proc.returncode}")
     return proc.stdout
