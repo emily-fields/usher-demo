@@ -1,0 +1,17 @@
+{
+  "key": "sars-cov-2",
+  "organism": "SARS-CoV-2",
+  "accession": "NC_045512.2",
+  "tree_url": "https://hgwdev.gi.ucsc.edu/~angie/UShER_SARS-CoV-2/public-latest.all.masked.ShUShER.pb.gz",
+  "metadata_url": "https://hgwdev.gi.ucsc.edu/~angie/UShER_SARS-CoV-2/public-latest.metadata.tsv.gz",
+  "reference_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_045512.2&rettype=fasta&retmode=text",
+  "downloaded_at": "2026-10-08T17:23:06+00:00",
+  "prune_size": 10000,
+  "source_leaf_count": 5349716,
+  "leaf_count": 10000,
+  "examples": [
+    "England/MILK-38AF5C7/2022|OW143988.1|2022-02-28",
+    "Wales/MILK-2A846B7/2021|OV161490.1|2021-11-14",
+    "England/MILK-1FAA060/2021|OU817389.1|2021-09-27"
+  ]
+}
